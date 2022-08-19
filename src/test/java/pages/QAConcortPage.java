@@ -38,10 +38,14 @@ public class QAConcortPage {
         qaConcortPage.loginButonu.click();
     }
     public void CHGelişmişGiris(){
-
+        Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
         QAConcortPage qaConcortPage=new QAConcortPage();
         qaConcortPage.gelismisButonu.click();
         qaConcortPage.gelismisLink.click();
+        qaConcortPage.ilkLogin.click();
+        qaConcortPage.userNameKutusu.sendKeys(ConfigReader.getProperty("CHValidUsername"));
+        qaConcortPage.passwordKutusu.sendKeys(ConfigReader.getProperty("CHValidPassword"));
+        qaConcortPage.loginButonu.click();
     }
 
     @FindBy(xpath = "(//a[@class='nav-link'])[1]")
@@ -307,6 +311,97 @@ public class QAConcortPage {
 
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     public WebElement HotelsuccessfullydeletedOkButonu;
+
+    @FindBy(xpath = "(//i[@class='icon-calendar'])[3]")
+    public WebElement hotelRoomsSekmesi;
+
+    @FindBy(xpath = "//span[@class='hidden-480']")
+    public WebElement addHotelRoomSekmesi;
+
+    @FindBy(xpath = "//select[@id='IDHotel']")
+    public WebElement selectHotelDropDown;
+
+    @FindBy(xpath = "//input[@id='Code']")
+    public WebElement hotelRoomCodeSekmesi;
+
+    @FindBy(xpath = "//input[@id='Name']")
+    public WebElement hotelRoomNameSekmesi;
+
+    @FindBy(xpath = "//input[@id='Location']")
+    public WebElement hotelRoomLocationSekmesi;
+
+    @FindBy(xpath = "//textarea[@role='textbox']")
+    public WebElement hotelRoomDescription;
+
+    @FindBy(xpath = "//input[@title='Price']")
+    public WebElement hotelRoomPrice;
+
+    @FindBy(xpath = "//select[@name='IDGroupRoomType']")
+    public WebElement hotelRoomTypeDropDown;
+
+    @FindBy(xpath = "//input[@id='MaxAdultCount']")
+    public WebElement hotelRoomMaxAdultcount;
+
+    @FindBy(xpath = "//input[@id='MaxChildCount']")
+    public WebElement hotelRoomMaxChildCount;
+
+    @FindBy(xpath = "//input[@id='IsAvailable']")
+    public WebElement hotelRoomIsAvailable;
+
+    @FindBy(xpath = "//button[@id='btnSubmit']")
+    public WebElement hotelRoomSaveButonu;
+
+    @FindBy(xpath = "//div[@class='bootbox-body']")
+    public WebElement FillAllFieldsPleaseYazisi;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement FillAllFieldsPleaseOkButonu;
+
+    @FindBy(xpath = "//li[@data-id='200']")
+    public WebElement hotelRoomPrice200;
+
+    @FindBy(xpath = "//li[@data-id='300']")
+    public WebElement hotelRoomPrice300;
+
+    @FindBy(xpath = "//li[@data-id='400']")
+    public WebElement hotelRoomPrice400;
+
+    @FindBy(xpath = "//li[@data-id='500']")
+    public WebElement hotelRoomPrice500;
+
+    @FindBy(xpath = "//li[@data-id='600']")
+    public WebElement hotelRoomPrice600;
+
+    @FindBy(xpath = "//li[@data-id='700']")
+    public WebElement hotelRoomPrice700;
+
+    @FindBy(xpath = "//select[@id='lkpHotels']")
+    public WebElement hotelRoomListIDHotel;
+
+    @FindBy(xpath = "//input[@name='Code']")
+    public WebElement hotelRoomListCode;
+
+    @FindBy(xpath = "//input[@name='Name']")
+    public WebElement hotelRoomListName;
+
+    @FindBy(xpath = "//input[@name='Location']")
+    public WebElement hotelRoomListLocation;
+
+    @FindBy(xpath = "//input[@name='Price']")
+    public WebElement hotelRoomListPrice;
+
+    @FindBy(xpath = "//select[@id='lkpGroupRoomTypes']")
+    public WebElement hotelRoomListIDGroupRoomTypes;
+
+    @FindBy(xpath = "//select[@name='IsAvailable']")
+    public WebElement hotelRoomListIsAvailable;
+
+    @FindBy(xpath = "//button[@class='btn btn-sm yellow filter-submit margin-bottom']")
+    public WebElement hotelRoomListSearch;
+
+
+
+
 
 
 
